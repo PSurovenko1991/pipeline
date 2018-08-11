@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--родитель всех модулей-->
+<module name="Checker">
+
+    <!--Расширение файла должно быть java, properties, xml-->
+    <property name="fileExtensions" value="java, properties, xml"/>
+    <!--Проверка файлов на кодировку-->
+    <property name="charset" value="UTF-8"/>
+    <!-- при возникновении ошибки чекстайла выполнение преоверки не прекращается-->
+    <!--<property name="halfOnException" value="false"/>-->
+
+    <!-- Checks for Size Violations.                    -->
+    <!-- See http://checkstyle.sf.net/config_sizes.html -->
+    <!--Максимальный размер файла 150 строк-->
+    <module name="FileLength">
+        <property name="max" value="150"/>
+    </module>
+
+    <!-- Checks for Headers                                -->
+    <!-- See http://checkstyle.sf.net/config_header.html   -->
+    <!-- <module name="Header"> -->
+    <!--   <property name="headerFile" value="${checkstyle.header.file}"/> -->
+    <!--   <property name="fileExtensions" value="java"/> -->
+    <!-- </module> -->
+
+
+    <module name="TreeWalker">
+
+
+        <!-- Checks for Naming Conventions.                  -->
+        <!-- See http://checkstyle.sf.net/config_naming.html -->
+
+        <!--Проверка имен констант-->
+        <module name="ConstantName">
+            <property name="format"
+                      value="^log(ger)?|[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+        <!--<module name="LocalFinalVariableName"/>-->
+        <!--проверка имен переменных-->
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z](_?[a-zA-Z0-9]+)*$"/>
+        </module>
+        <!--проверка имен объектов-->
+        <module name="MemberName">
+            <property name="format" value="^[a-z]+(\.[a-z0-9]*)*$"/>
+        </module>
+        <!--проверка имен методов -->
+        <module name="MethodName">
+            <property name="format" value="^[a-z]+(\.[a-z0-9]*)*$"/>
+        </module>
+        <!--Проверка имени пакета-->
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z0-9]*)*$"/>
+        </module>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+        <!-- Checks for Size Violations.                    -->
+        <!-- See http://checkstyle.sf.net/config_sizes.html -->
+        <module name="LineLength">
+            <property name="max" value="130"/>
+        </module>
+
+        <module name="MethodLength">
+            <property name="max" value="40"/>
+        </module>
+
+        <module name="ParameterNumber">
+            <property name="max" value="10"/>
+        </module>
+        <!-- Checks for whitespace                               -->
+        <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+        <!--<module name="EmptyForIteratorPad"/>-->
+        <!--<module name="GenericWhitespace"/>-->
+        <!--<module name="MethodParamPad"/>-->
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <!--<module name="OperatorWrap"/>-->
+        <!--<module name="ParenPad"/>-->
+        <!--<module name="TypecastParenPad"/>-->
+        <!--<module name="WhitespaceAfter"/>-->
+        <!--<module name="WhitespaceAround"/>-->
+        <!-- Modifier Checks                                    -->
+        <!-- See http://checkstyle.sf.net/config_modifiers.html -->
+        <!-- Checks for blocks. You know, those {}'s         -->
+        <!-- See http://checkstyle.sf.net/config_blocks.html -->
+        <module name="AvoidNestedBlocks"/>
+
+        <module name="EmptyBlock"/>
+
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+        <!-- Checks for common coding problems               -->
+        <!-- See http://checkstyle.sf.net/config_coding.html -->
+        <!--<module name="AvoidInlineConditionals"/>-->
+        <module name="EmptyStatement"/>
+
+        <module name="EqualsHashCode"/>
+
+        <!--<module name="HiddenField"/>-->
+        <!--<module name="IllegalInstantiation"/>-->
+        <!--<module name="InnerAssignment"/>-->
+        <!--<module name="MagicNumber"/>-->
+        <!--<module name="MissingSwitchDefault"/>-->
+        <!--<module name="SimplifyBooleanExpression"/>-->
+        <!--<module name="SimplifyBooleanReturn"/>-->
+        <!-- Checks for class design                         -->
+        <!-- See http://checkstyle.sf.net/config_design.html -->
+        <!--<module name="DesignForExtension"/>-->
+        <!--<module name="FinalClass"/>-->
+        <!--<module name="HideUtilityClassConstructor"/>-->
+        <module name="InterfaceIsType"/>
+        <!-- Miscellaneous other checks.                   -->
+        <!-- See http://checkstyle.sf.net/config_misc.html -->
+        <module name="ArrayTypeStyle"/>
+        <!--<module name="FinalParameters"/>-->
+        <!--<module name="TodoComment"/>-->
+        <!--<module name="UpperEll"/>-->
+    </module>
+</module>
